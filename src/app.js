@@ -16,6 +16,8 @@ function validadeRepositoryId(request, response, next) {
   if (!IsUuid(id)) {
     return response.status(400).json({ error: "Invalid repository ID." });
   }
+
+  return next();
 }
 
 app.use("/respositories/:id", validadeRepositoryId);
